@@ -49,7 +49,7 @@ public class User extends AuditEntity implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "user_rules_id")
-	private UserRoles userRules;
+	private UserRules userRules;
 
 	public Long getId() {
 		return id;
@@ -123,11 +123,11 @@ public class User extends AuditEntity implements Serializable {
 		this.apikeyExpireTime = apikeyExpireTime;
 	}
 
-	public UserRoles getUserRules() {
+	public UserRules getUserRules() {
 		return userRules;
 	}
 
-	public void setUserRules(UserRoles userRules) {
+	public void setUserRules(UserRules userRules) {
 		this.userRules = userRules;
 	}
 

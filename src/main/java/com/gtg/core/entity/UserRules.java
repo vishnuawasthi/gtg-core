@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "gtg_user_rules")
-public class UserRoles extends AuditEntity {
+public class UserRules extends AuditEntity {
 
 	/**
 	 * 
@@ -26,7 +26,7 @@ public class UserRoles extends AuditEntity {
 	private Long id;
 
 	@Column(name = "rule_name", nullable = false, unique = true)
-	private String roleName;
+	private String ruleName;
 
 	@Column(name = "description")
 	private String description;
@@ -42,12 +42,12 @@ public class UserRoles extends AuditEntity {
 		this.id = id;
 	}
 
-	public String getRoleName() {
-		return roleName;
+	public String getRuleName() {
+		return ruleName;
 	}
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
+	public void setRuleName(String ruleName) {
+		this.ruleName = ruleName;
 	}
 
 	public String getDescription() {
