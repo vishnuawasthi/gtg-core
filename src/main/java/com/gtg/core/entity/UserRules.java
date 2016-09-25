@@ -6,13 +6,14 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "gtg_user_rules")
+@SequenceGenerator(sequenceName="gtg_user_rules_seq",name="gtg_user_rules_seq",initialValue=1)
 public class UserRules extends AuditEntity {
 
 	/**
@@ -21,7 +22,7 @@ public class UserRules extends AuditEntity {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator="gtg_user_rules_seq")
 	@Column(name = "id", unique = true)
 	private Long id;
 
