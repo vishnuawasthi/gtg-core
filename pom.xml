@@ -67,11 +67,19 @@
                 <version>1.2.1.RELEASE</version>
         </dependency>
         
-		<dependency>
+		<!-- <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
-		</dependency>
+		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
+	 <dependency>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.1-901-1.jdbc4</version>
+    </dependency>
+		
 
 	</dependencies>
 	<!-- <repositories> project lombok is not yet in public maven repo <repository> 

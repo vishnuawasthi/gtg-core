@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user_role")
+@Table(name = "gtg_user_rules")
 public class UserRoles extends AuditEntity {
 
 	/**
@@ -25,13 +25,13 @@ public class UserRoles extends AuditEntity {
 	@Column(name = "id", unique = true)
 	private Long id;
 
-	@Column(name = "role_name", nullable = false, unique = true)
+	@Column(name = "rule_name", nullable = false, unique = true)
 	private String roleName;
 
 	@Column(name = "description")
 	private String description;
 
-	@OneToMany(mappedBy = "userRoles")
+	@OneToMany(mappedBy = "userRules")
 	private Set<User> users = new HashSet<User>();
 
 	public Long getId() {

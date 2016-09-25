@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "gtg_user")
 public class User extends AuditEntity implements Serializable {
 
 	private static final long serialVersionUID = 2754929437344581828L;
@@ -32,7 +32,7 @@ public class User extends AuditEntity implements Serializable {
 	@Column(name = "email", length = 320)
 	private String email;
 
-	@Column(name = "user_name", length = 320, unique=true,nullable = false)
+	@Column(name = "user_name", length = 320, unique = true, nullable = false)
 	private String username;
 
 	@Column(name = "password", length = 320, nullable = false)
@@ -43,13 +43,13 @@ public class User extends AuditEntity implements Serializable {
 
 	@Column(name = "lockout")
 	private Boolean lockout;
-	
-	@Column(name="api_key_expire_time")
+
+	@Column(name = "api_key_expire_time")
 	private Date apikeyExpireTime;
 
 	@ManyToOne
-	@JoinColumn(name = "user_roles_id")
-	private UserRoles userRoles;
+	@JoinColumn(name = "user_rules_id")
+	private UserRoles userRules;
 
 	public Long getId() {
 		return id;
@@ -107,8 +107,6 @@ public class User extends AuditEntity implements Serializable {
 		this.apiKey = apiKey;
 	}
 
-	
-
 	public Boolean getLockout() {
 		return lockout;
 	}
@@ -117,20 +115,20 @@ public class User extends AuditEntity implements Serializable {
 		this.lockout = lockout;
 	}
 
-	public UserRoles getUserRoles() {
-		return userRoles;
-	}
-
-	public void setUserRoles(UserRoles userRoles) {
-		this.userRoles = userRoles;
-	}
-
 	public Date getApikeyExpireTime() {
 		return apikeyExpireTime;
 	}
 
 	public void setApikeyExpireTime(Date apikeyExpireTime) {
 		this.apikeyExpireTime = apikeyExpireTime;
+	}
+
+	public UserRoles getUserRules() {
+		return userRules;
+	}
+
+	public void setUserRules(UserRoles userRules) {
+		this.userRules = userRules;
 	}
 
 }
